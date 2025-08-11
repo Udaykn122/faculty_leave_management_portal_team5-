@@ -637,3 +637,80 @@ Settings
 </div>
 </div>
 </div>
+<!-- Settings Section -->
+<div id="settings" class="content-section">
+<div class="section-header">
+<h2 class="section-title">System Settings</h2>
+</div>
+
+<div class="form-group">
+<label>Leave Approval Workflow</label>
+<select class="filter-select">
+<option>Department Head → Dean</option>
+<option>Direct to Dean</option>
+<option>Auto-approve for certain types</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>Maximum Leave Days per Year</label>
+<input type="number" value="30" class="search-input">
+</div>
+
+<button class="btn btn-success">Save Settings</button>
+</div>
+</div>
+</div>
+
+<!-- Modal for actions -->
+<div id="actionModal" class="modal">
+<div class="modal-content">
+<h3 id="modalTitle">Action Required</h3>
+<div id="modalBody">
+<!-- Dynamic content -->
+</div>
+<div style="display: flex; gap: 15px; justify-content: flex-end; margin-top: 20px;">
+<button class="btn btn-primary" onclick="closeModal()">Cancel</button>
+<button class="btn btn-success" onclick="confirmAction()">Confirm</button>
+</div>
+</div>
+</div>
+
+<script>
+// Sample data
+const sampleLeaves = [
+{id: 1, employee: "Dr. Sarah Johnson", department: "Computer Science", type: "Conference", startDate: "2025-08-15", endDate: "2025-08-17", status: "pending"},
+{id: 2, employee: "Prof. Michael Chen", department: "Mathematics", type: "Medical", startDate: "2025-08-10", endDate: "2025-08-16", status: "approved"},
+{id: 3, employee: "Dr. Emily Davis", department: "Physics", type: "Personal", startDate: "2025-08-20", endDate: "2025-08-22", status: "rejected"},
+];
+
+const sampleUsers = [
+{name: "Dr. Sarah Johnson", email: "sarah.j@edu.com", department: "Computer Science", position: "Associate Professor", status: "active"},
+{name: "Prof. Michael Chen", email: "michael.c@edu.com", department: "Mathematics", position: "Professor", status: "active"},
+{name: "Dr. Emily Davis", email: "emily.d@edu.com", department: "Physics", position: "Assistant Professor", status: "inactive"},
+];
+
+function showSection(sectionId) {
+// Hide all sections
+document.querySelectorAll('.content-section').forEach(section => {
+section.classList.remove('active');
+});
+
+// Remove active class from nav items
+document.querySelectorAll('.nav-item').forEach(item => {
+item.classList.remove('active');
+});
+
+// Show selected section
+document.getElementById(sectionId).classList.add('active');
+
+// Add active class to clicked nav item
+event.target.classList.add('active');
+
+// Load data based on section
+if (sectionId === 'leaves') {
+loadLeaves();
+} else if (sectionId === 'users') {
+loadUsers();
+}
+}
