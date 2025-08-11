@@ -432,3 +432,39 @@ min-width: 100%;
 }
 }
 </style>
+</head>
+<body>
+<div class="header">
+<div class="logo">EduLeave Pro Admin</div>
+<div class="user-info">
+<div class="user-avatar">AD</div>
+<span>Admin User</span>
+<button class="logout-btn" onclick="logout()">Logout</button>
+</div>
+</div>
+
+<div class="main-container">
+<div class="sidebar">
+<h3>Admin Panel</h3>
+<div class="nav-item active" onclick="showSection('dashboard')">
+<span class="nav-icon">📊</span>
+Dashboard
+</div>
+<div class="nav-item" onclick="showSection('leaves')">
+<span class="nav-icon">📋</span>
+Leave Requests
+</div>
+<div class="nav-item" onclick="showSection('users')">
+<span class="nav-icon">👥</span>
+User Management
+</div>
+<div class="nav-item" onclick="showSection('reports')">
+<span class="nav-icon">📈</span>
+Reports
+</div>
+<div class="nav-item" onclick="showSection('settings')">
+<span class="nav-icon">⚙️</span>
+Settings
+</div>
+</div>
+
