@@ -492,4 +492,50 @@ Settings
 <div class="stat-change positive">+5 new users</div>
 </div>
 </div>
+<div class="content-section active">
+<div class="section-header">
+<h2 class="section-title">Recent Leave Requests</h2>
+<button class="btn btn-primary">View All</button>
+</div>
+<table class="table">
+<thead>
+<tr>
+<th>Employee</th>
+<th>Department</th>
+<th>Leave Type</th>
+<th>Duration</th>
+<th>Status</th>
+<th>Actions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dr. Sarah Johnson</td>
+<td>Computer Science</td>
+<td>Conference Leave</td>
+<td>3 days</td>
+<td><span class="status-badge status-pending">Pending</span></td>
+<td>
+<div class="action-buttons">
+<button class="btn btn-success btn-sm" onclick="approveLeave(1)">Approve</button>
+<button class="btn btn-danger btn-sm" onclick="rejectLeave(1)">Reject</button>
+</div>
+</td>
+</tr>
+<tr>
+<td>Prof. Michael Chen</td>
+<td>Mathematics</td>
+<td>Medical Leave</td>
+<td>1 week</td>
+<td><span class="status-badge status-approved">Approved</span></td>
+<td>
+<div class="action-buttons">
+<button class="btn btn-primary btn-sm">View</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 
