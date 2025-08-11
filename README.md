@@ -1,4 +1,4 @@
-# Faculty Leave Management System
+# Teachers Leave Management System
 
 A simple web-based Faculty Leave Management System built using HTML, CSS, and JavaScript. This system allows faculty members to submit leave requests and administrators to manage and approve them through an interactive interface.
 
