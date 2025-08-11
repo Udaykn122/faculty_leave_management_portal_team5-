@@ -714,3 +714,43 @@ loadLeaves();
 loadUsers();
 }
 }
+function loadLeaves() {
+const tbody = document.getElementById('leavesTable');
+tbody.innerHTML = sampleLeaves.map(leave => `
+<tr>
+<td>#${leave.id.toString().padStart(3, '0')}</td>
+<td>${leave.employee}</td>
+<td>${leave.department}</td>
+<td>${leave.type}</td>
+<td>${leave.startDate}</td>
+<td>${leave.endDate}</td>
+<td><span class="status-badge status-${leave.status}">${leave.status}</span></td>
+<td>
+<div class="action-buttons">
+<button class="btn btn-success btn-sm" onclick="approveLeave(${leave.id})">Approve</button>
+<button class="btn btn-danger btn-sm" onclick="rejectLeave(${leave.id})">Reject</button>
+<button class="btn btn-primary btn-sm" onclick="viewDetails(${leave.id})">View</button>
+</div>
+</td>
+</tr>
+`).join('');
+}
+
+function loadUsers() {
+const tbody = document.getElementById('usersTable');
+tbody.innerHTML = sampleUsers.map((user, index) => `
+<tr>
+<td>${user.name}</td>
+<td>${user.email}</td>
+<td>${user.department}</td>
+<td>${user.position}</td>
+<td><span class="status-badge status-${user.status === 'active' ? 'approved' : 'rejected'}">${user.status}</span></td>
+<td>
+<div class="action-buttons">
+<button class="btn btn-primary btn-sm" onclick="editUser(${index})">Edit</button>
+<button class="btn btn-danger btn-sm" onclick="deleteUser(${index})">Delete</button>
+</div>
+</td>
+</tr>
+`).join('');
+}
