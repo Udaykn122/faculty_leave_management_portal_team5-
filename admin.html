@@ -827,4 +827,41 @@ showModal('Edit User', `
 </div>
 `);
 }
+function deleteUser(index) {
+showModal('Delete User', 'Are you sure you want to delete this user? This action cannot be undone.');
+}
 
+function exportData() {
+alert('Data export functionality would generate CSV/Excel file with leave data');
+}
+
+function showModal(title, body) {
+document.getElementById('modalTitle').textContent = title;
+document.getElementById('modalBody').innerHTML = body;
+document.getElementById('actionModal').classList.add('active');
+}
+
+function closeModal() {
+document.getElementById('actionModal').classList.remove('active');
+}
+
+function confirmAction() {
+alert('Action confirmed! In real application, this would process the action.');
+closeModal();
+}
+
+function logout() {
+if (confirm('Are you sure you want to logout?')) {
+alert('Logging out... Redirecting to login page');
+// Redirect to login page
+}
+}
+
+// Initialize
+document.addEventListener('DOMContentLoaded', function() {
+loadLeaves();
+loadUsers();
+});
+</script>
+</body>
+</html>
