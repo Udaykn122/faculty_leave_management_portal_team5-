@@ -396,3 +396,39 @@ margin-bottom: 8px;
 font-weight: 600;
 color: #333;
 }
+.form-group input, .form-group select, .form-group textarea {
+width: 100%;
+padding: 12px;
+border: 2px solid #e9ecef;
+border-radius: 8px;
+font-size: 14px;
+}
+
+.form-group textarea {
+resize: vertical;
+min-height: 100px;
+}
+
+@media (max-width: 768px) {
+.main-container {
+grid-template-columns: 1fr;
+padding: 20px;
+}
+
+.header {
+padding: 15px 20px;
+}
+
+.stats-grid {
+grid-template-columns: 1fr;
+}
+
+.search-filter {
+flex-direction: column;
+}
+
+.search-input {
+min-width: 100%;
+}
+}
+</style>
