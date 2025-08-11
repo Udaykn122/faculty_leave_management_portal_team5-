@@ -754,3 +754,30 @@ tbody.innerHTML = sampleUsers.map((user, index) => `
 </tr>
 `).join('');
 }
+
+function approveLeave(id) {
+showModal('Approve Leave', `Are you sure you want to approve this leave request?`);
+}
+
+function rejectLeave(id) {
+showModal('Reject Leave', `
+<div class="form-group">
+<label>Reason for rejection:</label>
+<textarea placeholder="Please provide a reason..."></textarea>
+</div>
+`);
+}
+
+function viewDetails(id) {
+const leave = sampleLeaves.find(l => l.id === id);
+showModal('Leave Details', `
+<div style="text-align: left;">
+<p><strong>Employee:</strong> ${leave.employee}</p>
+<p><strong>Department:</strong> ${leave.department}</p>
+<p><strong>Leave Type:</strong> ${leave.type}</p>
+<p><strong>Duration:</strong> ${leave.startDate} to ${leave.endDate}</p>
+<p><strong>Status:</strong> ${leave.status}</p>
+</div>
+`);
+}
+
