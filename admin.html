@@ -579,3 +579,61 @@ Settings
 </tbody>
 </table>
 </div>
+<!-- User Management Section -->
+<div id="users" class="content-section">
+<div class="section-header">
+<h2 class="section-title">User Management</h2>
+<button class="btn btn-primary" onclick="addUser()">Add New User</button>
+</div>
+
+<div class="search-filter">
+<input type="text" class="search-input" placeholder="Search users...">
+<select class="filter-select">
+<option value="">All Roles</option>
+<option value="lecturer">Lecturer</option>
+<option value="professor">Professor</option>
+<option value="admin">Admin</option>
+</select>
+</div>
+
+<table class="table">
+<thead>
+<tr>
+<th>Name</th>
+<th>Email</th>
+<th>Department</th>
+<th>Position</th>
+<th>Status</th>
+<th>Actions</th>
+</tr>
+</thead>
+<tbody id="usersTable">
+<!-- Dynamic content will be loaded here -->
+</tbody>
+</table>
+</div>
+
+<!-- Reports Section -->
+<div id="reports" class="content-section">
+<div class="section-header">
+<h2 class="section-title">Reports & Analytics</h2>
+</div>
+
+<div class="stats-grid">
+<div class="stat-card">
+<div class="stat-number">78%</div>
+<div class="stat-label">Approval Rate</div>
+<div class="stat-change positive">+5% vs last month</div>
+</div>
+<div class="stat-card">
+<div class="stat-number">4.2</div>
+<div class="stat-label">Avg Processing Days</div>
+<div class="stat-change negative">-0.8 days improved</div>
+</div>
+<div class="stat-card">
+<div class="stat-number">31</div>
+<div class="stat-label">Peak Leave Days</div>
+<div class="stat-change">December average</div>
+</div>
+</div>
+</div>
